@@ -74,7 +74,7 @@
         <tr><td>Init System</td><td><code>OpenRC</code></td></tr>
         <tr><td>Default Shell</td><td><code>sh</code> / <code>fish</code></td></tr>
         <tr><td>Target Users</td><td>Intermediate Linux users</td></tr>
-        <tr><td>Desktops</td><td>KDE Plasma, XFCE, Niri</td></tr>
+        <tr><td>Desktops</td><td>TaigaWM, KDE Plasma, XFCE, Niri</td></tr>
         <tr><td>Development</td><td>Community-driven</td></tr>
       </table>
     </div>
@@ -88,7 +88,7 @@
   <h2>Key Features</h2>
   <div class="features-grid">
     <div class="feature-card">
-      <div class="feature-icon" style="color: gold;">OpenRC</div>
+      <div class="feature-icon"><img width="25%" src="img/openrc.png"></div>
       <h3>OpenRC</h3>
       <p>A lightweight init system that starts and supervises services using dependency-based, parallel startup, providing a simple and efficient alternative to systemd.</p>
     </div>
@@ -131,6 +131,13 @@
     </div>
     <div class="download-options">
       <div class="iso-card">
+        <div class="iso-name">TaigaWM</div>
+        <div class="iso-type">Our own window manager</div>
+        <p class="iso-desc">New, unique, fast wayland window manager written in C and LUA</p><br><br>
+        <button class="download-btn" onclick="triggerDownload('taigawm')">Download ISO</button>
+        <p class="iso-meta">borealOS-taigawm.iso</p>
+      </div>
+      <div class="iso-card">
         <div class="iso-name">KDE Plasma</div>
         <div class="iso-type">Full Desktop</div>
         <p class="iso-desc">Feature-rich, modern desktop with extensive customization. Best for users transitioning from Windows or those who want everything included.</p>
@@ -151,6 +158,20 @@
         <button class="download-btn" onclick="triggerDownload('niri')">Download ISO</button>
         <p class="iso-meta">borealOS-niri.iso</p>
       </div>
+      <!-- <div class="iso-card">
+        <div class="iso-name">SWAY</div>
+        <div class="iso-type">Lightweight tiling window manager</div>
+        <p class="iso-desc">Tiling wayland window manager inspired by i3, very fast.</p><br><br>
+        <button class="download-btn" onclick="triggerDownload('sway')">Download ISO</button>
+        <p class="iso-meta">borealOS-sway.iso</p>
+      </div>
+      <div class="iso-card">
+        <div class="iso-name">Hyprland</div>
+        <div class="iso-type">Sway on steroids</div>
+        <p class="iso-desc">Tiling wayland window manager with a mountain of effects.</p><br><br>
+        <button class="download-btn" onclick="triggerDownload('hyprland')">Download ISO</button>
+        <p class="iso-meta">borealOS-hyprland.iso</p>
+      </div> -->
     </div>
     <p class="notice">ISOs not yet available &mdash; project is under active development. Watch the <a href="https://github.com/boreal-project/borealOS" target="_blank" style="color: var(--teal);">GitHub repo</a> for releases.</p>
   </div>
@@ -158,16 +179,19 @@
 
 <footer>
   <p>BorealOS &mdash; Website by Damian &mdash; Design by Damarts</p>
-  <p><a href="https://github.com/boreal-project/borealOS" target="_blank">https://github.com/boreal-project/borealOS</a></p>
+  <p><a href="https://github.com/boreal-project/borealOS" target="_blank">github.com/boreal-project/borealOS</a></p>
 </footer>
 
 <div class="toast" id="toast"></div>
 
 <script>
   const isoMap = {
-    kde:  { name: 'KDE Plasma', file: 'borealOS-plasma.iso' },
+    taigawm: { name: 'TaigaWM', file: 'borealOS-taigawm.iso'},
+    kde:  { name: 'KDE Plasma', file: 'borealOS-plasma.iso' },
     xfce: { name: 'XFCE',       file: 'borealOS-xfce.iso'   },
-    sway: { name: 'Sway',       file: 'borealOS-sway.iso'   },
+    niri: { name: 'Niri',       file: 'borealOS-niri.iso'   },
+    /* sway: { name: 'Sway',       file: 'borealOS-sway.iso'   },
+    hyprland: {name: 'Hyprland',file: 'borealOS-hyprland.iso'   }, */
   };
 
   function triggerDownload(variant) {
